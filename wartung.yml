@@ -7,3 +7,4 @@
       ansible.builtin.file:
         path: /tmp/wartung-test.txt
         state: touch
+        mode: '0644'
