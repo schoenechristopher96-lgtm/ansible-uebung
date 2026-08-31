@@ -1,0 +1,9 @@
+---
+- name: Übungs-Playbook Serverwartung
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Zeitstempel-Datei anlegen
+      ansible.builtin.file:
+        path: /tmp/wartung-test.txt
+        state: touch
