@@ -7,3 +7,5 @@
       ansible.builtin.file:
         path: /tmp/wartung-test.txt
         state: touch
+
+echo "# Testfall" >> wartung.yml
