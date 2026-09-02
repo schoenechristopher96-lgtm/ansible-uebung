@@ -8,3 +8,12 @@
         path: /tmp/wartung-test.txt
         state: touch
         mode: '0644'
+
+    - name: Freien Speicherplatz ermitteln
+      ansible.builtin.command: df -h /
+      register: speicher
+      changed_when: false
+
+    - name: Speicherplatz ausgeben
+      ansible.builtin.debug:
+        var: speicher.stdout_lines
