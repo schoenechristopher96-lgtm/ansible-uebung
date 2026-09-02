@@ -1,0 +1,23 @@
+name: Playbook-Pruefung
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python bereitstellen
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: ansible-lint installieren
+        run: pip install ansible-lint
+
+      - name: Playbooks pruefen
+        run: ansible-lint
